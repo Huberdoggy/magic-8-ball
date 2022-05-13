@@ -1,0 +1,4 @@
+# Doing this so that prettier integration with eslint doesn't conflict with my leaving the vscode-default HTML formatter (per preference)
+# Update - adjusting settings.json to insert spaces vs tabs and to set HTML as tabSize=2, as well as setting the equivalent in .prettierrc seems to fix this
+
+#**/*.html

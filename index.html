@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang='en' xmlns='http://www.w3.org/1999/html' xmlns='http://www.w3.org/1999/html'>
+<head>
+  <meta charset='UTF-8' />
+  <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+  <script src='./main.js' defer></script>
+  <script src='https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js'></script>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <link rel='preconnect' href='https://fonts.googleapis.com'>
+  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+  <link href='https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap' rel='stylesheet'>
+  <link rel='stylesheet' href='styles.css' />
+  <title>Kyle's Flexbox Page</title>
+</head>
+<body>
+<nav class='navbar'>
+  <div class='container'>
+    <div class='logo'>Magic 8 Ball</div>
+    <ul class='nav'>
+      <li>
+        <a href='https://www.google.com' class='headerIcon' target='_blank'>
+          <ion-icon class='headerIcon' name='logo-google'></ion-icon>
+          Google</a>
+      </li>
+      <li>
+        <a href='https://github.com/Huberdoggy' class='headerIcon' target='_blank'>
+          <ion-icon class='headerIcon' name='logo-github'></ion-icon>
+          Kyle's Github</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<header class='header'>
+  <div>
+  </div>
+</header>
+
+<section class='boxes'>
+  <div class='container'>
+    <div class='box'>
+      <h2>
+        <ion-icon class='boxIcon' name='tennisball'></ion-icon>
+      </h2>
+      <p>
+      <form id='question-box'>
+        <label>Your Question:<input name='question' type='text' size='40' /></label>
+        <button type='submit'>Ask!</button>
+        </form>
+      </p>
+    </div>
+    <div class='box'>
+      <h2>
+        <ion-icon class='boxIcon' name='git-network'></ion-icon>
+        Your Fate
+      </h2>
+      <p id='question-response'>
+
+      </p>
+    </div>
+  </div>
+</section>
+</body>
+</html>

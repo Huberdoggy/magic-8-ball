@@ -1,0 +1,37 @@
+{
+  "root": true, // Don't traverse up past this looking for addl .eslintrc's
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": ["airbnb-base", "prettier"],
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "plugins": ["html", "prettier"],
+  //   "overrides": [
+  //     {
+  //       "files": ["*.html"],
+  //       "parser": "@html-eslint/parser",
+  //       "extends": ["plugin:@html-eslint/recommended"]
+  //     }
+  //   ],
+
+  "rules": {
+    "no-alert": "off",
+    "no-plusplus": "off",
+    "no-console": "off",
+    "prefer-const": "off",
+    "valid-typeof": [
+      "error",
+      {
+        "requireStringLiterals": false
+      }
+    ],
+    "func-names": ["error", "as-needed"],
+
+    "prettier/prettier": ["error"]
+  }
+}
