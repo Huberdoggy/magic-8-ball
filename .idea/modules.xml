@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/first-day-html.iml" filepath="$PROJECT_DIR$/first-day-html.iml" />
+      <module fileurl="file://$PROJECT_DIR$/magic-8-ball.iml" filepath="$PROJECT_DIR$/magic-8-ball.iml" />
     </modules>
   </component>
 </project>
