@@ -30,6 +30,8 @@ function genRand() {
 }
 
 function renderResponses() {
+  const qInput = document.getElementById('qInput');
+  qInput.value = '';
   responseEl.replaceChildren();
   // eslint-disable-next-line no-restricted-syntax
   for (let question of questionArr) {
@@ -38,11 +40,14 @@ function renderResponses() {
     let regex = /^(?!Most likely)([\w\s]+)?[no|not|don't|doubtful]([\w\s]+)?$/;
     if (question.response.match(regex)) {
       console.log(regex);
-      responsePara.innerHTML = `<p style='color: red'>${question.response}</p>`;
+      responsePara.innerHTML = `<p>You asked: "${question.prevQuestion}"</p><br>
+      <span>Magic Ball says:</span><p style='color: tomato'>${question.response}</p>`;
     } else {
-      responsePara.innerHTML = `<p style='color: lawngreen'>${question.response}</p>`;
+      responsePara.innerHTML = `<p>You asked: "${question.prevQuestion}"</p><br>
+      <span>Magic Ball says:</span><p style='color: lawngreen'>${question.response}</p>`;
     }
     responseEl.appendChild(responsePara); // similar to 'push'
+    qInput.focus();
   }
 }
 
@@ -54,9 +59,11 @@ if (formEl !== null) {
     const newQuestion = {
       question: formData.get('question'),
       response: theAnswer,
+      prevQuestion: formData.get('question'), // for displaying in the answer div
     };
     if (newQuestion.question) {
       questionArr = [newQuestion]; // I only want to show the most recent
+      // console.log(newQuestion.prevQuestion);
       renderResponses(); // Now, run func with their 'Question' in the array
     }
   });

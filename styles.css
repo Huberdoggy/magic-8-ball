@@ -99,10 +99,12 @@ ul {
 
 #question-box input {
   font-weight: bold;
+  font-size: 16px;
 }
 
 .responses-para {
   font-weight: bold;
+  /*font-size: 20px;*/
 }
 
 .box {
