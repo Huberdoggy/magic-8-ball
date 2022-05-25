@@ -29,6 +29,20 @@ function genRand() {
   return Math.floor(Math.random() * answerArr.length);
 }
 
+function printDivText() {
+  let magicText = document.getElementById('magic-text');
+  magicText.innerHTML = '';
+  let strArr = ['Magic', '8', 'Ball', 'Simulator'];
+  for (let i = 0; i < strArr.length; i++) {
+    let counter = setTimeout(() => {
+      magicText.innerHTML += ` ${strArr[i]}`;
+    }, 1000 * i);
+    if (i === strArr.length) {
+      clearTimeout(counter);
+    }
+  }
+}
+
 function renderResponses() {
   const qInput = document.getElementById('qInput');
   qInput.value = '';
@@ -39,7 +53,7 @@ function renderResponses() {
     responsePara.className = 'responses-para';
     let regex = /^(?!Most likely)([\w\s]+)?[no|not|don't|doubtful]([\w\s]+)?$/;
     if (question.response.match(regex)) {
-      console.log(regex);
+      // console.log(regex);
       responsePara.innerHTML = `<p>You asked: "${question.prevQuestion}"</p><br>
       <span>Magic Ball says:</span><p style='color: tomato'>${question.response}</p>`;
     } else {
@@ -63,8 +77,9 @@ if (formEl !== null) {
     };
     if (newQuestion.question) {
       questionArr = [newQuestion]; // I only want to show the most recent
-      // console.log(newQuestion.prevQuestion);
       renderResponses(); // Now, run func with their 'Question' in the array
     }
   });
 }
+
+setInterval(printDivText, 10000); // to keep rerunning it while allowing enough time for setTimeout to render each word in array
